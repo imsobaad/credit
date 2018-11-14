@@ -46,6 +46,27 @@ client.on('message', msg => {
 });
 
 
+  client.on('message',async message => {
+    var prefix : "."
+    if(message.content.startsWith(prefix + "restart")) {
+        if(message.author.id !== "486200045008453635") return message.reply('You aren\'t the bot owner.');
+        message.channel.send('**Restarting.**').then(msg => {
+            setTimeout(() => {
+               msg.edit('**Restarting..**');
+            },1000);
+            setTimeout(() => {
+               msg.edit('**Restarting...**');
+            },2000);
+        });
+        console.log(`${message.author.tag} [ ${message.author.id} ] has restarted the bot.`);
+        console.log(`Restarting..`);
+        setTimeout(() => {
+            client.destroy();
+            client.login('process.env.BOT_TOKEN');
+        },3000);
+    }
+});
+
 
 
 
