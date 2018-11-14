@@ -15,7 +15,7 @@ client.on('message', msg => {
     let ownerid = '486200045008453635';
     if(msg.author.id === ownerid){
         if(msg.content === "farm"){
-            if(msg.channel.id !== "509408244146503680") return;
+            if(msg.channel.id !== "512366415676702724") return;
             let count = 0;
             farm.set(`farm`, 'true')
             setInterval(function(){
