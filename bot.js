@@ -30,7 +30,7 @@ client.on('message', msg => {
             if(msg.channel.id !== "512361949351378975") return;
             if(msg.isMentioned(client.user)){
                 farm.set(`farm`, 'blah blah')
-                let args = msg.content.split(` `)
+                let args[2] = msg.content.split(` `)
                 msg.channel.send(`#credits <@!${msg.author.id}> ${args[2]}`).then(()=>{
                     const filter = m => m.author.id === msg.author.id;
                     msg.channel.awaitMessages(filter, {max: 1, time: 29000}).then(col=>{
