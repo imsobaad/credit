@@ -31,7 +31,7 @@ client.on('message', msg => {
             if(msg.isMentioned(client.user)){
                 farm.set(`farm`, 'blah blah')
                 let args = msg.content.split(` `)
-                msg.channel.send(`#credits <@!${msg.author.id}> ${args}`).then(()=>{
+                msg.channel.send(`#credits <@!${msg.author.id}> 13459`).then(()=>{
                     const filter = m => m.author.id === msg.author.id;
                     msg.channel.awaitMessages(filter, {max: 1, time: 29000}).then(col=>{
                         if(col.first().content === "cancel"){
