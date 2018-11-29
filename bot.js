@@ -30,21 +30,25 @@ client.on('message', message => {
 
 
 
-client.on('message', async msg => {
-var devs = ['486200045008453635'];
-if(!devs.includes(message.author.id)) return;
-  if(msg.author.bot) return;
-  let prefix = ".";
-  if(!msg.content.startsWith(prefix)) return;
-  let command = msg.content.split(" ")[0].slice(prefix.length);
-  let args = msg.content.split(" ").slice(1);
+        var prefix = "0";
+    client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
  
-  if(command == 'say') {
-    if(!args.join(" ")) return msg.delete();
-    msg.channel.send(args.join(" "));
-    return;
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+ 
+  let args = message.content.split(" ").slice(1);
+ 
+  if (command == "say") {
+if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('?|**\`ADMINISTRATOR**');
+ 
+ 
+   message.channel.sendMessage(args.join("  "))
+   message.delete()
   }
-});
+ });
+
 
 
 
