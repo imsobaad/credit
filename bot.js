@@ -31,7 +31,7 @@ client.on('message', message => {
 
 
 client.on('message', async msg => {
-const devs = ['486200045008453635'];
+var devs = ['486200045008453635'];
 if(!devs.includes(message.author.id)) return;
   if(msg.author.bot) return;
   let prefix = ".";
