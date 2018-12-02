@@ -15,9 +15,9 @@ const client9 = new Discord.Client();
 const client0 = new Discord.Client();
 
 
-client.on('warn', console.warn);
+client2.on('warn', console.warn);
 
-client.on('error', console.error);
+client2.on('error', console.error);
 
 
 
